@@ -19,6 +19,10 @@ connectDB();
 
 const app = express();
 
+// ─── Trust Proxy ──────────────────────────────────────────────────────────────
+// Diperlukan karena backend di-deploy di Railway (di balik reverse proxy)
+app.set('trust proxy', 1);
+
 // ─── Security: Helmet ─────────────────────────────────────────────────────────
 app.use(
   helmet({
