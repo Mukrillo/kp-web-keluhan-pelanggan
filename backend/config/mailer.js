@@ -14,14 +14,15 @@ const createTransporter = () => {
 
   const transporter = nodemailer.createTransport({
     host: SMTP_HOST,
-    port: parseInt(SMTP_PORT || '587', 10),
-    secure: SMTP_PORT === '465',
+    port: parseInt(SMTP_PORT || '465', 10),
+    secure: parseInt(SMTP_PORT || '465', 10) === 465,
     auth: {
       user: SMTP_USER,
       pass: SMTP_PASS,
     },
     tls: {
-      rejectUnauthorized: process.env.NODE_ENV === 'production',
+      // Seringkali container cloud seperti Railway memiliki masalah validasi sertifikat SSL/TLS bawaan
+      rejectUnauthorized: false,
     },
   });
 
