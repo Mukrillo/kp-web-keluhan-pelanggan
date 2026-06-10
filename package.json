@@ -9,8 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "server": "cd backend && npm run dev",
-    "start": "concurrently --kill-others-on-fail --names \"BACKEND,FRONTEND\" --prefix-colors \"cyan,magenta\" \"cd backend && npm run dev\" \"vite\"",
-    "postinstall": "cd backend && npm install"
+    "start": "concurrently --kill-others-on-fail --names \"BACKEND,FRONTEND\" --prefix-colors \"cyan,magenta\" \"cd backend && npm run dev\" \"vite\""
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.0",
