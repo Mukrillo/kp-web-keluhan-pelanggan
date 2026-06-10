@@ -155,7 +155,7 @@ const TicketDetailPage = () => {
                     <h3 className="text-slate-900 font-semibold text-sm">Lampiran</h3>
                   </div>
                   <a
-                    href={ticket.attachment.filepath}
+                    href={(import.meta.env.VITE_API_URL || '') + ticket.attachment.filepath}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 p-3 bg-slate-50 border border-slate-200 rounded-lg hover:border-blue-400 transition-colors group"

@@ -1,7 +1,13 @@
-import { RefreshCw } from 'lucide-react';
+import { RefreshCw, Menu } from 'lucide-react';
 
 const Topbar = ({ title, subtitle, onRefresh, isRefreshing = false, actions }) => (
-  <header className="h-16 bg-white border-b border-slate-200 flex items-center px-6 gap-4 sticky top-0 z-20 shadow-sm">
+  <header className="h-16 bg-white border-b border-slate-200 flex items-center px-4 md:px-6 gap-3 md:gap-4 sticky top-0 z-20 shadow-sm">
+    <button
+      onClick={() => window.dispatchEvent(new CustomEvent('toggleSidebar'))}
+      className="md:hidden p-2 -ml-2 text-slate-500 hover:text-slate-800 hover:bg-slate-100 rounded-lg"
+    >
+      <Menu className="w-5 h-5" />
+    </button>
     <div className="flex-1 min-w-0">
       <h1 className="text-slate-900 font-semibold text-sm leading-tight">{title}</h1>
       {subtitle && <p className="text-slate-400 text-xs mt-0.5">{subtitle}</p>}

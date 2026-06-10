@@ -25,7 +25,7 @@ const Sidebar = ({ collapsed = false, onToggle }) => {
 
   return (
     <aside
-      className={`h-screen bg-blue-950/90 border-r border-blue-900/60 flex flex-col fixed left-0 top-0 z-30 transition-all duration-300 ${collapsed ? 'w-16' : 'w-64'}`}
+      className={`h-screen bg-blue-950/90 border-r border-blue-900/60 flex flex-col fixed left-0 top-0 z-40 transition-all duration-300 ${collapsed ? 'w-16 max-md:-translate-x-full' : 'w-64'}`}
     >
       {/* Logo + Toggle */}
       <div className={`border-b border-blue-900/50 flex items-center ${collapsed ? 'justify-center py-4 px-2' : 'justify-between px-4 py-4'}`}>
